@@ -11,7 +11,7 @@
 
 	<name>ShadowUI</name>
 
-	<description>A all-in-one plugin for Server UI's</description>
+	<description>An All-in-One Server UI Plugin</description>
 	<properties>
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -45,6 +45,27 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>3.2.4</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<relocations>
+						<relocation>
+							<pattern>fr.mrmicky.fastboard</pattern>
+							<shadedPattern>uk.co.tmdavies.shadowui.fastboard</shadedPattern>
+						</relocation>
+					</relocations>
+				</configuration>
+			</plugin>
 		</plugins>
 		<resources>
 			<resource>
@@ -63,13 +84,37 @@
 			<id>sonatype</id>
 			<url>https://oss.sonatype.org/content/groups/public/</url>
 		</repository>
+		<repository>
+			<id>savagelabs</id>
+			<url>https://nexus.savagelabs.net/repository/maven-releases/</url>
+		</repository>
+		<repository>
+			<id>placeholderapi</id>
+			<url>http://repo.extendedclip.com/content/repositories/placeholderapi/</url>
+		</repository>
 	</repositories>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.spigotmc</groupId>
-			<artifactId>spigot-api</artifactId>
+			<artifactId>spigot</artifactId>
 			<version>1.17-R0.1-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>fr.mrmicky</groupId>
+			<artifactId>fastboard</artifactId>
+			<version>1.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.iridium</groupId>
+			<artifactId>IridiumColorAPI</artifactId>
+			<version>1.0.4</version>
+		</dependency>
+		<dependency>
+			<groupId>me.clip</groupId>
+			<artifactId>placeholderapi</artifactId>
+			<version>2.9.2</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>

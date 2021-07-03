@@ -3,5 +3,14 @@ version: ${project.version}
 main: uk.co.tmdavies.shadowui.ShadowUI
 api-version: 1.17
 authors: [ Carbonate ]
-description: A all-in-one plugin for Server UI's
+softdepend: [ PlaceholderAPI ]
+description: An All-in-One Server UI Plugin
 website: https://www.tmdavies.co.uk
+commands:
+  shadowui:
+    aliases: [ sui ]
+permissions:
+  shadowui.admin:
+    default: op
+  shadowui.customtabname:
+    default: op
