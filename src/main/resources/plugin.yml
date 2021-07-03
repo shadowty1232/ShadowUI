@@ -1,0 +1,7 @@
+name: ShadowUI
+version: ${project.version}
+main: uk.co.tmdavies.shadowui.ShadowUI
+api-version: 1.17
+authors: [ Carbonate ]
+description: A all-in-one plugin for Server UI's
+website: https://www.tmdavies.co.uk
